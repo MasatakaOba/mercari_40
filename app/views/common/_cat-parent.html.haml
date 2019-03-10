@@ -1,0 +1,7 @@
+%h2
+  = link_to "カテゴリーから探す", root_path, class: "header-nav-root"
+%ul.js-header-nav-parent-wrap.header-nav-parent-wrap
+  = render "./common/cat-child", name: "レディース01"
+  = render "./common/cat-child", name: "レディース02"
+  = render "./common/cat-child", name: "レディース03"
+  = render "./common/cat-child", name: "レディース04"

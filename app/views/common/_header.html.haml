@@ -1,0 +1,26 @@
+%header.top-header
+  .header-inner
+    .header-top
+      .mer-image
+        = link_to root_path do
+          = image_tag("logo.svg", size: "134x34")
+      .header-form
+        = form_tag(root_path, class: "serch", method: :get) do
+          = text_field :serch_item, "", class: "input-default", placeholder: "キーワードから探す"
+          = fa_icon 'search'
+
+    .header-nav
+      .list-left
+        %ul.header-nav-left
+          %li
+            = render "./common/cat-parent"
+          %li
+            = render "./common/brand"
+      .list-right
+        %ul.header-nav-right
+          %li
+            = render "./common/header-mypage"
+          %li
+            = render "./common/header-notification"
+          %li
+            = render "./common/header-todo"

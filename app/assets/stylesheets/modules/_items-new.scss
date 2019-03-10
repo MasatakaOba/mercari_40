@@ -1,0 +1,354 @@
+.flex-space-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+.l-single-container{
+  width: 700px;
+  margin: 0 auto;
+  background-color: $white;
+}
+
+.btn-default{
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-red{
+  background: $red;
+  border: 1px solid $red;
+  color: $white;
+}
+
+.btn-gray{
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: $white;
+}
+
+.l-single-head{
+  padding: 32px 16px;
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.input-default{
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: $white;
+  line-height: 1.5;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.textarea-default{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 104px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.select-default{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select-wrap{
+  position: relative;
+  background: $white;
+}
+
+.sell-sub-head{
+  color: #888;
+  font-size: 14px;
+}
+
+.form-require{
+  background-color: $red;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: $white;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.form-arbitrary{
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  background: #ccc;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.form-question{
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: $light-blue;
+  color: $white;
+  line-height: 14px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.width-50{
+  width: 50px;
+}
+
+.form-group{
+  margin: 40px 0 0;
+  &:first-child{
+    margin: 0;
+  }
+  & .input-default{
+    width: 100%;
+    margin: 8px 0 0;
+  }
+  & label{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  & .textarea-default{
+    margin: 8px 0 0;
+  }
+  & select{
+    width: 100%;
+  }
+  & .select-wrap{
+    margin: 8px 0 0;
+  }
+  & .fa-angle-down{
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    z-index: 2;
+    color: #888;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+}
+
+.sell{
+  &-form{
+    border-top: 1px solid #eee;
+  }
+  &-upload{
+    &-figure{
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 116px;
+      padding: 0;
+      background: $gray-for-background;
+      &.portrait img{
+        position: absolute;
+        transform: translate(-50%, 0);
+        height: 100%;
+        top: 0;
+        left: 50%;
+      }
+      &.landscape img{
+        position: absolute;
+        transform: translate(0, -50%);
+        width: 100%;
+        top: 50%;
+        left: 0;
+      }
+      &.square img{
+        width: 100%;
+      }
+    }
+    &-items{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      &-container{
+        width: 100%;
+      }
+      &>.width-for-item-0{
+        width: 620px;
+        margin-left: 0;
+      }
+      &>.width-for-item-1{
+        width: 491px;
+      }
+      &>.width-for-item-2{
+        width: 363px;
+      }
+      &>.width-for-item-3{
+        width: 234px;
+      }
+      &>.width-for-item-4{
+        width: 106px;
+      }
+    }
+    &-button{
+      font-size: 14px;
+      display: flex;
+      & .sell-upload-delete{
+        border-left: 1px solid $gray-for-button;
+      }
+      & div {
+        display: inline-block;
+        width: 50%;
+        background: $gray-for-background;
+        color: $light-blue;
+        line-height: 44px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    &-items-list{
+      display: flex;
+    }
+    &-item{
+      width: 116px;
+      margin: 0 0 10px 10px;
+      &:first-child{
+        margin:  0 0 10px 0;
+      }
+    }
+    &-box{
+      white: 620px;
+      padding: 40px;
+    }
+    &-head{
+      font-size: 16px;
+      &+p{
+        margin: 8px 0 0;
+        line-height: 1.5;
+      }
+    }
+    &-drop-box{
+      display: block;
+      padding: 40px;
+      width: 620px;
+      box-sizing: border-box;
+      position: relative;
+      height: 162px;
+      background-color: $gray-for-background;
+      border: 1px dashed #ccc;
+      text-align: center;
+      transition: box-shadow ease-out .3s, -webkit-box-shadow ease-out .3s;
+      cursor: pointer;
+      margin-left: 2%;
+      & pre{
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        right: 16px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        pointer-events: none;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+    }
+    &-label{
+      width: 100%;
+    }
+    &-input{
+     display: none;
+    }
+  }
+  &-dropbox-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 620px;
+    margin: 16px auto 0;
+  }
+  &-content{
+    padding: 40px;
+    border-top: 1px solid #eee;
+  }
+  &-price>li{
+    padding: 24px 0;
+    border-top: 1px solid #ccc;
+    &:first-child{
+      padding: 0 0 24px 0;
+      border: 0;
+    }
+  }
+  &-form-box{
+    width: 400px;
+    margin: 0;
+    & .bold{
+      font-weight: 600;
+      & .l-left{
+        font-size: 16px;
+      }
+      & .l-right{
+        font-size: 34px;
+      }
+    }
+  }
+  &-btn-box{
+    & p {
+      line-height: 1.5;
+    }
+    & .btn-red{
+      margin: 40px 0 0;
+    }
+    & .btn-gray{
+      width: 45%;
+      margin: 24px auto 0;
+    }
+  }
+}
+
+.sell-price{
+  &-label{
+    height: 48px;
+    line-height: 48px;
+  }
+  &-input{
+    display: flex;
+    justify-content: flex-end;
+    height: 48px;
+    & span{
+      line-height: 48px;
+    }
+    &-box{
+      width: 80%;
+      margin: 0 0 0 5%;
+      & .input-default{
+        margin: 0;
+        text-align: right;
+      }
+    }
+  }
+}
+

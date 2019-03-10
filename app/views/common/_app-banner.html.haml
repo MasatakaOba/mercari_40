@@ -1,0 +1,19 @@
+%aside.app-banner
+  .app-banner-container
+    .app-banner-inner
+      %h2 スマホでかんたんフリマアプリ
+      %p 今すぐ無料ダウンロード！
+      .app-banner-icon
+        %figure
+          =image_tag("mercari_icon.png", size: "68x68")
+        %ul.app-banner-appstore
+          %li
+            =link_to root_path do
+              %figure
+                =image_tag("app-store.svg", size: "133x40")
+          %li
+            =link_to root_path do
+              %figure
+                =image_tag("google-play.svg", size: "133x40")
+    %figure
+      =image_tag("download_content_pc.png", size: "300x262")

@@ -1,0 +1,130 @@
+= render "./common/header-singleheader"
+%main
+  %section.l-single-container.buy-item-container
+    %h2.l-single-head 商品の情報を入力
+    = form_tag(root_path, class: "sell-form") do
+      .sell-upload-box
+        %h3.sell-upload-head
+          出品画像
+          %span.form-require 必須
+        %p 最大10枚までアップロード出来ます
+        .sell-dropbox-container
+          .sell-upload-items-container
+            .sell-upload-items
+              %ul.sell-upload-items-list
+              = label :item, :image , class: "sell-upload-drop-box width-for-item-0"do
+                %pre
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをアップロード
+          = file_field :item, :image, multiple: "",class: "sell-upload-input js-upload-image-input"
+      .sell-content
+        .form-group
+          = label :item, :name do
+            商品名
+            %span.form-require 必須
+          = text_field :item, :name, class: "input-default" ,placeholder: "商品名（必須 40文字まで)"
+        .form-group
+          = label :item, :comment do
+            商品の説明
+            %span.form-require 必須
+          = text_area :item, :comment, class: "textarea-default" , rows: 5, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+      .sell-content.flex-space-between
+        %h3.sell-sub-head 商品の詳細
+        .sell-form-box
+          .form-group
+            = label :item, :category do
+              カテゴリー
+              %span.form-require 必須
+            .select-wrap
+              = select_tag :item, options_for_select({"---": "none", レディース: "redis", メンズ: "men", ベビーキッズ: "men"}), class: "select-default"
+              = fa_icon 'angle-down 2x'
+            .select-wrap
+              = select_tag :item, options_for_select({"---": "none", レディース: "redis", メンズ: "men", ベビーキッズ: "men"}), class: "select-default"
+              = fa_icon 'angle-down 2x'
+            .select-wrap
+              = select_tag :item, options_for_select({"---": "none", レディース: "redis", メンズ: "men", ベビーキッズ: "men"}), class: "select-default"
+              = fa_icon 'angle-down 2x'
+          .form-group
+            = label :item, :size do
+              サイズ
+              %span.form-require 必須
+            .select-wrap
+              = select_tag :item, options_for_select({"---": "none", XXS: "xxs", XS: "xs", S: "S"}), class: "select-default"
+              = fa_icon 'angle-down 2x'
+          .form-group
+            = label :item, :brand do
+              ブランド
+              %span.form-arbitrary 任意
+            .select-wrap
+              = text_field :item, :brand, class: "input-default" ,placeholder: "例）シャネル"
+          .form-group
+            = label :item, :condition do
+              商品の状態
+              %span.form-require 必須
+            .select-wrap
+              = select_tag :item, options_for_select({"---": "none", "新品・未使用": 1, "未使用に近い": 2, "目立った傷や汚れ無し": 3}), class: "select-default"
+              = fa_icon 'angle-down 2x'
+      .sell-content.flex-space-between
+        %h3.sell-sub-head
+          発送について
+          = link_to "?", root_path, class: "form-question"
+        .sell-form-box
+          .form-group
+            = label :item, :shipping_cost do
+              発送料の負担
+              %span.form-require 必須
+            .select-wrap
+              = select_tag :shipping_cost_id, options_for_select({"---": "none", "送料込み(出品者負担)": "1", "着払い(購入者負担)": "2"}), class: "select-default"
+              = fa_icon 'angle-down 2x'
+          .form-group
+            = label :item, :sender_prefecture do
+              発送元の地域
+              %span.form-require 必須
+            .select-wrap
+              = select_tag :sender_prefecture, options_from_collection_for_select(Prefecture.all, :id, :name), class: "select-default"
+              = fa_icon 'angle-down 2x'
+          .form-group
+            = label :item, :days_for_shipment do
+              発送までの日数
+              %span.form-require 必須
+            .select-wrap
+              = select_tag :days_for_shipment, options_for_select({"---": "none", "1~2日で発送": "1", "2~3日で発送": "2", "4~7日で発送": "3"}), class: "select-default"
+              = fa_icon 'angle-down 2x'
+      .sell-content.flex-space-between
+        %h3.sell-sub-head
+          販売価格(300〜9,999,999)
+          = link_to "?", root_path, class: "form-question"
+        .sell-form-box
+          %ul.sell-price
+            %li.form-group.flex-space-between
+              = label :item, :price, class: "sell-price-label" do
+                価格
+                %span.form-require 必須
+              .sell-price-input
+                %span ¥
+                .sell-price-input-box
+                  = text_field :item, :price, class: "input-default js-price" ,placeholder: "例）300"
+            %li.flex-space-between
+              .l-left 販売手数料（10%）
+              .l-right.js-price-fee -
+            %li.flex-space-between.bold
+              .l-left 販売利益
+              .l-right.js-price-margin -
+      .sell-content.sell-btn-box
+        .discription
+          %p
+            =link_to "禁止されている出品", root_path
+            、
+            =link_to "行為", root_path
+            を必ずご確認ください。
+          %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            =link_to "偽ブランドの販売", root_path
+            は犯罪であり処罰される可能性があります。
+          %p
+            また、出品をもちまして
+            =link_to "加盟店規約", root_path
+            に同意したことになります。
+        = submit_tag "出品する", class: "btn-default btn-red"
+        = link_to "戻る", root_path, class: "btn-default btn-gray"
+= render "./common/footer-singlefooter"

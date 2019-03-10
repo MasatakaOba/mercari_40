@@ -1,0 +1,35 @@
+= link_to root_path, class: "header-nav-root header-user-icon" do
+  = image_tag("member_photo_noimage_thumb.png", size: "32x32")
+  %div マイページ
+.header-nav-user-box
+  .mypage-state
+    %figure
+      %div
+        = image_tag("member_photo_noimage_thumb.png", size: "60x60")
+      %figcaption カワカミ
+    %ul.mypage-review-listing
+      %li
+        =link_to "評価:1", root_path
+      %li
+        =link_to "出品数:0", root_path
+    %ul.mypage-sales-point
+      %li
+        =link_to root_path, class: "salse-point" do
+          .salse-point-left 売上金
+          .salse-point-right
+            ¥ 100
+            =fa_icon 'chevron-right'
+      %li
+        =link_to root_path, class: "salse-point" do
+          .salse-point-left ポイント
+          .salse-point-right
+            P 100
+            =fa_icon 'chevron-right'
+  %ul.mypage-nav-list
+    = render "./common/header-mypage-list-item", comment: "いいね！一覧"
+    = render "./common/header-mypage-list-item", comment: "出品した商品 - 出品中"
+    = render "./common/header-mypage-list-item", comment: "出品した商品 - 取引中"
+    = render "./common/header-mypage-list-item", comment: "出品した商品 - 売却済み"
+    = render "./common/header-mypage-list-item", comment: "購入した商品 - 取引中"
+    = render "./common/header-mypage-list-item", comment: "購入した商品 - 取引中"
+    = render "./common/header-mypage-list-item", comment: "購入した商品 - 過去の取引"

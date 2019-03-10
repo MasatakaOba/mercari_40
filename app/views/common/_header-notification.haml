@@ -1,0 +1,10 @@
+= link_to root_path, class: "header-nav-root" do
+  = fa_icon 'bell'
+  .header-nav-count 23
+  %span お知らせ
+%ul.header-nav-notification-box
+  = render "./common/header-notification-item", {comment: "○○さんからメッセージ「【¥2か？」", time: "19時間前"}
+  = render "./common/header-notification-item", {comment: "○○さんからメッセージ「【¥200分のお得チケット獲得！】欲しかったあの商品をお得にゲットしませんか？」", time: "19時間前"}
+  = render "./common/header-notification-item", {comment: "○○さんからメッセージ「ゲットしませんか？」」", time: "19時間前"}
+  = render "./common/header-notification-item", {comment: "○○さんからメッセージ「こんにちは」", time: "19時間前"}
+  = render "./common/header-notification-item", {comment: "○○さんからメッセージ「こんばんは」", time: "19時間前"}

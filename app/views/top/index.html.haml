@@ -1,0 +1,37 @@
+= render "./common/header"
+%main
+  %section.owl-carousel
+    .owl-stage-outer
+      .owl-stage
+        .owl-item.cloned
+          = render "main-visual"
+        .owl-item.origin.active
+          = link_to "", root_path, class: "top-banner banner-new-life"
+        .owl-item.origin
+          = link_to "", root_path, class: "top-banner banner-bokurano-heisei"
+        .owl-item.origin
+          = render "main-visual"
+        .owl-item.cloned
+          = link_to "", root_path, class: "top-banner banner-new-life"
+    .owl-nav
+      .owl-prev
+      .owl-next
+    .owl-dots
+      .owl-dot.active-for-dot
+      .owl-dot
+      .owl-dot
+  %section.pickup-container
+    %h2.pickup-head ピックアップカテゴリー
+    = render "pickup-items", name: "レディース"
+    = render "pickup-items", name: "メンズ"
+    = render "pickup-items", name: "ベビー・キッズ"
+    = render "pickup-items", name: "コスメ・香水・美容"
+  %section.pickup-container
+    %h2.pickup-head ピックアップブランド
+    = render "pickup-items", name: "シャネル"
+    = render "pickup-items", name: "ルイヴィトン"
+    = render "pickup-items", name: "シュプリーム"
+    = render "pickup-items", name: "ナイキ"
+= render "./common/app-banner"
+= render "./common/footer"
+= render "./common/sell-btn"

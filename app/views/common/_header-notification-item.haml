@@ -1,0 +1,10 @@
+%li
+  = link_to root_path, class: "mypage-item-link" do
+    .mypage-item-image
+      =image_tag("mercari_profile.png", size: "48x48")
+    .mypage-item-body
+      .mypage-item-text=comment
+      %time
+        = fa_icon 'clock-o'
+        %span=time
+    = fa_icon 'chevron-right'

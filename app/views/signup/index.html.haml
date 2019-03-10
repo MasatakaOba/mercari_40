@@ -1,0 +1,19 @@
+%div.single-container
+  = render "./common/header-singleheader"
+  %main.single-main
+    %section.l-single-container
+      %h2.l-single-head 新規会員登録
+      %div.l-single-inner
+        %div.l-single-content
+          = link_to "#", class: "btn-default btn-mail" do
+            %div.fa-pull-left
+              %i.fa.fa-envelope-o.btn-mail-icon
+            %p.text-mail メールアドレスで登録
+          = link_to "#", class: "btn-default btn-sns btn-sns-facebook", id:"facebook-login" do
+            %div.fa-pull-left
+              %i.fa.fa-facebook-official
+            %p.text-facebook Facebookで登録
+          = link_to "#", class: "btn-default btn-sns btn-sns-google", id:"google-login" do
+            = image_tag "google.svg", class: "fa-pull-left"
+            %p.text-google Googleで登録
+  = render "./common/footer-singlefooter"
